@@ -6,7 +6,7 @@ from io import BytesIO
 import patoolib
 
 # Load the machine learning model
-model = joblib.load(r'C:\Users\Manuel\Downloads\Streamlit_Project_Energy_Predictions\random_forest.joblib')
+model = joblib.load('random_forest.joblib')
 
 # Extract the RAR file
 patoolib.extract_archive(r'C:\Users\Manuel\Downloads\Streamlit_Project_Energy_Predictions\dataset_pre-processed.rar', outdir='.')
@@ -15,7 +15,7 @@ patoolib.extract_archive(r'C:\Users\Manuel\Downloads\Streamlit_Project_Energy_Pr
 preprocessed_data = pd.read_csv('dataset_pre-processed.csv')
 
 # Load the preprocessor
-preprocessor = joblib.load(r'C:\Users\Manuel\Downloads\Streamlit_Project_Energy_Predictions\pre_processor.joblib')
+preprocessor = joblib.load('pre_processor.joblib')
 
 def show_machine_learning_page():
     st.title('Machine Learning Predictions')
