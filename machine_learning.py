@@ -6,18 +6,18 @@ from io import BytesIO
 import patoolib
 
 # Load the machine learning model
-model = joblib.load(r'C:\Users\Manuel\Downloads\Streamlit_Project_Energy_Predictions\random_forest.joblib')
-
-
+model_path = 'random_forest.joblib'  # Relative path to the model file
+model = joblib.load(model_path)
 
 # Extract the RAR file
-patoolib.extract_archive(r'C:\Users\Manuel\Downloads\Streamlit_Project_Energy_Predictions\dataset_pre-processed.rar', outdir='.')
+patoolib.extract_archive('dataset_pre-processed.rar', outdir='.')
 
 # Read the contents
 preprocessed_data = pd.read_csv('dataset_pre-processed.csv')
 
 # Load the preprocessor
-preprocessor = joblib.load(r'C:\Users\Manuel\Downloads\Streamlit_Project_Energy_Predictions\pre_processor.joblib')
+preprocessor_path = 'pre_processor.joblib'  # Relative path to the preprocessor file
+preprocessor = joblib.load(preprocessor_path)
 
 def show_machine_learning_page():
     st.title('Machine Learning Predictions')
@@ -57,6 +57,3 @@ def show_machine_learning_page():
 
         # Additional contextual information
         st.write(f'Based on {len(filtered_data)} data points from {selected_year}.')
-
-# Assuming preprocessed_data is defined here or load it separately
-# preprocessed_data = pd.read_csv(compressed_file_path)  # Remove this line
