@@ -9,7 +9,7 @@ import patoolib
 model = joblib.load('random_forest.joblib')
 
 # Extract the RAR file
-patoolib.extract_archive(r'C:\Users\Manuel\Downloads\Streamlit_Project_Energy_Predictions\dataset_pre-processed.rar', outdir='.')
+patoolib.extract_archive('dataset_pre-processed.rar', outdir='.')
 
 # Read the contents
 preprocessed_data = pd.read_csv('dataset_pre-processed.csv')
