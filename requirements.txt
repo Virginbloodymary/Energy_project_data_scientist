@@ -3,7 +3,8 @@ streamlit==1.30.0
 joblib==1.3.2
 pandas==2.0.3
 numpy==1.24.4
-patool==2.1.0
+patool==1.12
+
 
 
 
